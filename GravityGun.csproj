@@ -1,0 +1,77 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <AssemblyName>GravityGun</AssemblyName>
+    <RootNamespace>GravityGunMod</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="BepInEx">
+      <HintPath>..\Libs\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>..\Libs\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\Libs\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\Libs\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\Libs\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\Libs\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>..\Libs\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>..\Libs\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>..\Libs\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GitRepos\Tool Import API\ToolImportApi.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Assets\Poses\*.arm-pose.cs" />
+
+    <EmbeddedResource Include="Assets\Models\gravity-gun-world.glb">
+      <LogicalName>GravityGunMod.Assets.Models.gravity-gun-world.glb</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Models\gravity-gun-view.glb">
+      <LogicalName>GravityGunMod.Assets.Models.gravity-gun-view.glb</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Images\gravity-gun-icon.png">
+      <LogicalName>GravityGunMod.Assets.Images.gravity-gun-icon.png</LogicalName>
+    </EmbeddedResource>
+    <!-- Optional arm pose payloads: build still succeeds when no file exists. -->
+    <EmbeddedResource Include="Assets\Poses\*.arm-pose.cs">
+      <LogicalName>%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
+
+    <EmbeddedResource Include="Assets\Audio\gravity-gun-pickup.mp3">
+      <LogicalName>GravityGunMod.Assets.Audio.gravity-gun-pickup.mp3</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Audio\gravity-gun-hold.mp3">
+      <LogicalName>GravityGunMod.Assets.Audio.gravity-gun-hold.mp3</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Audio\gravity-gun-drop.mp3">
+      <LogicalName>GravityGunMod.Assets.Audio.gravity-gun-drop.mp3</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Audio\gravity-gun-shoot.mp3">
+      <LogicalName>GravityGunMod.Assets.Audio.gravity-gun-shoot.mp3</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Audio\gravity-gun-failed-shoot.mp3">
+      <LogicalName>GravityGunMod.Assets.Audio.gravity-gun-failed-shoot.mp3</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
