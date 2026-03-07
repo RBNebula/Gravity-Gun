@@ -18,7 +18,7 @@ namespace GravityGunMod
     {
         public const string PluginGuid = "com.main.gravitygun";
         public const string PluginName = "Gravity Gun Mod";
-        public const string PluginVersion = "0.0.2";
+        public const string PluginVersion = "0.0.3";
 
         private const string WorldModelResourceName = "GravityGunMod.Assets.Models.gravity-gun-world.glb";
         private const string ViewModelResourceName = "GravityGunMod.Assets.Models.gravity-gun-view.glb";

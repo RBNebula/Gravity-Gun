@@ -383,10 +383,9 @@ namespace GravityGunMod.Core
 
             if (Owner != null)
             {
+                ZeroVelocityIfDynamic(_toolRootRigidbody);
                 _toolRootRigidbody.isKinematic = true;
                 _toolRootRigidbody.useGravity = true;
-                _toolRootRigidbody.linearVelocity = Vector3.zero;
-                _toolRootRigidbody.angularVelocity = Vector3.zero;
                 _toolRootRigidbody.interpolation = RigidbodyInterpolation.None;
             }
         }
@@ -411,9 +410,8 @@ namespace GravityGunMod.Core
                 _toolRootRigidbody.detectCollisions = !held;
                 if (held)
                 {
+                    ZeroVelocityIfDynamic(_toolRootRigidbody);
                     _toolRootRigidbody.isKinematic = true;
-                    _toolRootRigidbody.linearVelocity = Vector3.zero;
-                    _toolRootRigidbody.angularVelocity = Vector3.zero;
                 }
             }
         }
@@ -451,9 +449,8 @@ namespace GravityGunMod.Core
             Rigidbody? rb = GetComponent<Rigidbody>();
             if (rb != null)
             {
+                ZeroVelocityIfDynamic(rb);
                 rb.isKinematic = true;
-                rb.linearVelocity = Vector3.zero;
-                rb.angularVelocity = Vector3.zero;
                 rb.position = anchor.position;
                 rb.rotation = anchor.rotation;
             }
@@ -519,6 +516,17 @@ namespace GravityGunMod.Core
             {
                 _vfx.PlayShootBolt(hitPoint);
             }
+        }
+
+        private static void ZeroVelocityIfDynamic(Rigidbody rb)
+        {
+            if (rb.isKinematic)
+            {
+                return;
+            }
+
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
         }
 
         private void TryInitializeVfx()

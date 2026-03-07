@@ -38,7 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GitRepos\Tool Import API\ToolImportApi.csproj" />
+    <ProjectReference Include="..\Tool Import API\ToolImportApi.csproj" />
   </ItemGroup>
 
   <ItemGroup>
