@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GravityGunMod.Core
+namespace GravityGun.Core
 {
     internal sealed class GravityGunAudioController
     {

@@ -1,6 +1,6 @@
 using BepInEx.Logging;
 
-namespace GravityGunMod.Diagnostics
+namespace GravityGun.Diagnostics
 {
     internal static class GravityGunLog
     {
@@ -21,7 +21,7 @@ namespace GravityGunMod.Diagnostics
         {
             if (_logger != null && _debugEnabled)
             {
-                _logger.LogInfo("[GravityGun] " + message);
+                _logger.LogInfo(ModInfo.LOG_PREFIX + " " + message);
             }
         }
 
@@ -29,7 +29,7 @@ namespace GravityGunMod.Diagnostics
         {
             if (_logger != null)
             {
-                _logger.LogWarning("[GravityGun] " + message);
+                _logger.LogWarning(ModInfo.LOG_PREFIX + " " + message);
             }
         }
     }

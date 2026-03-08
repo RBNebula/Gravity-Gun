@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace GravityGunMod.Resources
+namespace GravityGun.Resources
 {
     internal static class EmbeddedResourceLoader
     {

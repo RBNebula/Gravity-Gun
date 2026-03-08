@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GravityGunMod.Audio
+namespace GravityGun.Audio
 {
     internal static class SoundDefinitionFactory
     {

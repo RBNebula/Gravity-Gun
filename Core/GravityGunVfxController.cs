@@ -1,7 +1,7 @@
-using GravityGunMod.Diagnostics;
+using GravityGun.Diagnostics;
 using UnityEngine;
 
-namespace GravityGunMod.Core
+namespace GravityGun.Core
 {
     internal sealed class GravityGunVfxController
     {

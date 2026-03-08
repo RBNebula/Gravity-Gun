@@ -2,11 +2,11 @@ using System;
 using System.Collections;
 using System.Reflection;
 using BepInEx.Logging;
-using GravityGunMod.Core;
-using GravityGunMod.Resources;
+using GravityGun.Core;
+using GravityGun.Resources;
 using UnityEngine;
 
-namespace GravityGunMod.Audio
+namespace GravityGun.Audio
 {
     internal sealed class GravityGunAudioCatalog
     {
@@ -47,14 +47,14 @@ namespace GravityGunMod.Audio
         {
             if (!TryFindAudioResourceName(assembly, clipBaseName, out string? resourceName))
             {
-                logger.LogWarning("[GravityGun] Missing embedded audio resource for " + clipBaseName);
+                logger.LogWarning(ModInfo.LOG_PREFIX + " Missing embedded audio resource for " + clipBaseName);
                 setDefinition(null);
                 yield break;
             }
 
             if (!EmbeddedResourceLoader.TryReadAllBytes(assembly, resourceName!, out byte[]? bytes) || bytes == null)
             {
-                logger.LogWarning("[GravityGun] Failed to read embedded audio resource " + resourceName);
+                logger.LogWarning(ModInfo.LOG_PREFIX + " Failed to read embedded audio resource " + resourceName);
                 setDefinition(null);
                 yield break;
             }
@@ -72,7 +72,7 @@ namespace GravityGunMod.Audio
 
             if (clip == null)
             {
-                logger.LogWarning("[GravityGun] Failed to decode " + resourceName + ". " + decodeError);
+                logger.LogWarning(ModInfo.LOG_PREFIX + " Failed to decode " + resourceName + ". " + decodeError);
                 setDefinition(null);
                 yield break;
             }

@@ -4,7 +4,7 @@ using BepInEx.Configuration;
 using MineMogul.ToolImportApi.Api;
 using UnityEngine;
 
-namespace GravityGunMod
+namespace GravityGun.Services
 {
     internal sealed class ToolRegistrationService
     {

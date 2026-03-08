@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace GravityGunMod.Audio
+namespace GravityGun.Audio
 {
     internal interface IAudioClipDecoder
     {

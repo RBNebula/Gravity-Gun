@@ -4,7 +4,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace GravityGunMod.Audio
+namespace GravityGun.Audio
 {
     internal sealed class UnityWebRequestAudioClipDecoder : IAudioClipDecoder
     {
